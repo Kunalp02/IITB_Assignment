@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    {% for blog in blogs %}
+    <div class="card m-2" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{blog.title}}</h5>
+        <a href="{% url 'blog_posts' blog.id %}" class="btn btn-primary">See Blog</a>
+        <a href="{% url 'create_post' blog.id %}" class="btn btn-primary">Add Post</a>
+
+        <a href="{% url 'delete_blog' blog.id %}"><img width="48" height="48" src="https://img.icons8.com/color/48/delete-forever.png" alt="delete-forever"/></a>
+        
+        
+    </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

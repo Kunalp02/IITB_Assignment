@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+    {% for post in posts %}
+    <div class="card m-2" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <h5 class="card-title">{{post.description}}</h5>
+
+        <a href="{% url 'delete_post' post.id %}">
+        <img width="48" height="48" src="https://img.icons8.com/color/48/delete-forever.png" alt="delete-forever"/>
+        </a>
+        
+    </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock content %}
